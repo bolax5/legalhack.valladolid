@@ -8,5 +8,8 @@ export const environment = {
     storageBucket: 'legalhackvalladolid.appspot.com',
     messagingSenderId: '94983189717',
     appId: '1:94983189717:web:42ccb46157c792de'
+  },
+  laravel: {
+    url: 'http://lorientedev.com:8888/api'
   }
 };

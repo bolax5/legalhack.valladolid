@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatService } from './services/chat/chat.service';
+import { Observable } from 'rxjs';
+import { Message } from 'src/app/core/domain/message';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.scss']
+  styleUrls: ['./chat.component.scss'],
+  providers: [ChatService]
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent {
+  @Input() roomId: string;
 
-  constructor() { }
+  username: string;
+  body: string;
+  messages: Observable<Message[]>;
 
-  ngOnInit() {
+  constructor(private chatService: ChatService) {
+    this.messages = this.chatService.getChat(this.roomId);
   }
 
+  public send() {
+    this.chatService.sendMessage(this.roomId, { username: this.username, body: this.body });
+  }
 }

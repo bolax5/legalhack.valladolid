@@ -1,3 +1,9 @@
-<p>
-  chat works!
-</p>
+
+<div *ngFor="let message of messages | async">
+  <p>{{message.username}}</p>
+  <p>{{message.body}}</p>
+</div>
+username
+<input type="text" [(ngModel)]="username">
+<input type="textarea" [(ngModel)]="body">
+<button (click)="send()">send</button>

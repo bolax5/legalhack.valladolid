@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build.pro": "ng build --prod",
+    "publish.pro": "npm run build.pro && docker build . --tag=bolax5/legalhackvalladolidocker && docker push bolax5/legalhackvalladolidocker",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

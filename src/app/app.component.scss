@@ -1,0 +1,8 @@
+@import './../styles/styleVariables.scss';
+
+.outlet {
+    position: absolute;
+    left: $menu-width;
+    top: $nav-height;
+    width: $content-width;
+}

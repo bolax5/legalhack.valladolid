@@ -1,0 +1,13 @@
+<select [(ngModel)]="currentChatId" (ngModelChange)="setCurrentChatId()">
+  <option *ngFor="let option of roomList$ | async" value="option">
+    {{option}}
+  </option>
+</select>
+<div *ngFor="let message of messages$ | async">
+  <p>{{message.username}}</p>
+  <p>{{message.body}}</p>
+</div>
+username
+<input type="text" [(ngModel)]="username">
+<input type="textarea" [(ngModel)]="body">
+<button (click)="send()">send</button>

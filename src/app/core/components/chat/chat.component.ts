@@ -10,17 +10,22 @@ import { Message } from 'src/app/core/domain/message';
   providers: [ChatService]
 })
 export class ChatComponent {
-  @Input() roomId: string;
-
+  roomId: string;
+  currentChatId: string;
   username: string;
   body: string;
-  messages: Observable<Message[]>;
+  messages$: Observable<Message[]>;
+  roomList$: Observable<string[]>;
 
   constructor(private chatService: ChatService) {
-    this.messages = this.chatService.getChat(this.roomId);
+    this.roomList$ = this.chatService.getRooms();
+    this.messages$ = this.chatService.getChat();
   }
 
   public send() {
     this.chatService.sendMessage(this.roomId, { username: this.username, body: this.body });
+  }
+  public setCurrentChatId() {
+    this.chatService.setChatId(this.currentChatId);
   }
 }

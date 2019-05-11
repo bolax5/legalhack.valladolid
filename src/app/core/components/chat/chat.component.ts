@@ -23,6 +23,7 @@ export class ChatComponent {
 
   public send() {
     this.chatService.sendMessage(this.currentChatId, { username: this.username, body: this.body });
+    this.body = '';
   }
   public setCurrentChatId() {
     this.chatService.setChatId(this.currentChatId);

@@ -17,7 +17,11 @@ export class RoomService {
     return this.http.fireGetList(`document/${roomId}`);
   }
   public getDocument(roomId: string, version?: string) {
-    return this.http.httpGet(`room/${roomId}/document`, {version});
+    if (version) {
+      return this.http.httpGet(`room/${roomId}/doc`, {version});
+    } else {
+      return this.http.httpGet(`room/${roomId}/doc`);
+    }
   }
 
   public setRoomChat(id: string): any {

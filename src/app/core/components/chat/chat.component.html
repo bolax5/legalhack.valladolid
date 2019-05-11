@@ -1,3 +1,4 @@
+<h3 class="text-info">Chat</h3>
 <div class="w-100 bg-light d-flex px-2">
   <p class="mr-2">Conectado a:</p>
   <select class="form-control w-50" [(ngModel)]="currentChatId" (ngModelChange)="setCurrentChatId()">
@@ -7,13 +8,17 @@
   </select>
 </div>
 <div class="chat-container">
-  <div class="message" *ngFor="let message of messages$ | async">
+  <div class="message bg-light my-1" *ngFor="let message of messages$ | async">
     <p class="body">{{message.username}}</p>
     <p class="username">{{message.body}}</p>
   </div>
 </div>
 
-username
-<input type="text" [(ngModel)]="username">
-<input type="textarea" [(ngModel)]="body">
-<button (click)="send()">send</button>
+<div class="row no-gutters text-info">
+  Nombre de usuario
+  <input type="text" class="col-6 form-control" [(ngModel)]="username">
+  Mensaje
+  <input type="textarea" class="col-12 form-control"[(ngModel)]="body">
+</div>
+
+<button class="btn btn-primary" (click)="send()">Enviar</button>

@@ -1,6 +1,7 @@
-<div class="row no-gutters"></div>
-<div class="col-3 border rounded p-3" *ngFor="let room of (rooms$ | async)">
-  <h4>{{room.name}}</h4>
-  <p>{{room.description}}</p>
-  <button class="btn btn-block btn-dark" (click)="joinRoom(room.id)">Entrar a la sala</button>
+<div class="row no-gutters d-flex justify-content-around">
+  <div class="col-3 border rounded m-1 p-3" *ngFor="let room of (rooms$ | async)">
+    <h4>{{room.name}}</h4>
+    <p>{{room.description}}</p>
+    <button class="btn btn-block btn-dark" (click)="joinRoom(room.id)">Entrar a la sala</button>
+  </div>
 </div>

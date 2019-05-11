@@ -1,0 +1,9 @@
+<div class="d-flex">
+  <p class="p-2">Documento versión: </p>
+  <select class="p-2" [(ngModel)]="currentVersion" (ngModelChange)="setCurrentVersion()">
+    <option *ngFor="let option of documentVersions$ | async" [value]="option">
+      {{option}}
+    </option>
+  </select>
+</div>
+<app-editor class="p-2"></app-editor>

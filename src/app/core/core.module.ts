@@ -11,6 +11,8 @@ import { ChatComponent } from './components/chat/chat.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { RootReducers } from './stores';
+import {HttpClientModule} from '@angular/common/http';
+
 
 const COMPONENTS = [
   HeaderComponent, MenuComponent, FooterComponent, ChatComponent
@@ -19,6 +21,7 @@ const COMPONENTS = [
   declarations: [...COMPONENTS],
   imports: [
     CommonModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,

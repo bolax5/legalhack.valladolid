@@ -1,4 +1,9 @@
-
 <app-header></app-header>
-<app-menu></app-menu><router-outlet></router-outlet>
+<section class="row no-gutters">
+    <app-menu class="col-3"></app-menu>
+    <main class="outlet col-9 p-3">
+        <router-outlet></router-outlet>
+    </main>
+
+</section>
 <app-footer></app-footer>

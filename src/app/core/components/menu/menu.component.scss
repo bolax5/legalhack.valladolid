@@ -1,10 +1,5 @@
 @import './../../../../styles/styleVariables.scss';
 
 .menu{
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding-top: $nav-height; 
-    width: $menu-width;
     height: 100vh;
 }

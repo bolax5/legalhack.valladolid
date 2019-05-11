@@ -10,7 +10,6 @@ import { Message } from 'src/app/core/domain/message';
   providers: [ChatService]
 })
 export class ChatComponent {
-  roomId: string;
   currentChatId: string;
   username: string;
   body: string;
@@ -23,7 +22,7 @@ export class ChatComponent {
   }
 
   public send() {
-    this.chatService.sendMessage(this.roomId, { username: this.username, body: this.body });
+    this.chatService.sendMessage(this.currentChatId, { username: this.username, body: this.body });
   }
   public setCurrentChatId() {
     this.chatService.setChatId(this.currentChatId);
